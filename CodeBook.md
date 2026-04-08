@@ -1,22 +1,54 @@
 # Code Book
 
-## Dataset
-Human Activity Recognition Using Smartphones Dataset
+## Dataset Description
+
+The dataset contains measurements collected from accelerometers and gyroscopes from 30 subjects performing different activities.
+
+---
 
 ## Variables
 
-- Subject: ID of subject (1–30)
-- Activity: Activity performed (WALKING, SITTING, etc.)
-- Other variables: Mean and standard deviation measurements from sensors
+### Identifiers
+- Subject: Identifier of the subject (1–30)
+- Activity: Type of activity performed
+  - WALKING
+  - WALKING_UPSTAIRS
+  - WALKING_DOWNSTAIRS
+  - SITTING
+  - STANDING
+  - LAYING
 
-## Data Cleaning Steps
+---
 
-1. Merged training and test datasets
-2. Extracted mean and standard deviation measurements
-3. Used descriptive activity names
-4. Renamed variables for clarity
-5. Created a tidy dataset with average of each variable for each subject and activity
+### Measurements
 
-## Output
+The dataset includes:
 
-Final dataset: tidy_data.txt
+- Time domain signals (tBodyAcc, tGravityAcc, etc.)
+- Frequency domain signals (fBodyAcc, fBodyGyro, etc.)
+
+Each measurement includes:
+- Mean values (Mean)
+- Standard deviation values (StdDev)
+
+---
+
+## Data Cleaning Process
+
+The following transformations were applied:
+
+1. Combined training and test datasets into one dataset
+2. Extracted only mean and standard deviation features
+3. Replaced activity IDs with descriptive names
+4. Renamed variables to improve readability:
+   - Removed special characters
+   - Replaced abbreviations (mean → Mean, std → StdDev)
+5. Created a tidy dataset by computing the average of each variable for each subject and activity
+
+---
+
+## Final Output
+
+- tidy_data.txt
+
+This dataset contains the average of each selected variable grouped by subject and activity.
